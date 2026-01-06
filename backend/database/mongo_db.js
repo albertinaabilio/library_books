@@ -1,7 +1,7 @@
+//Need to privatise all public details
 const { MongoClient, ServerApiVersion } = require('mongodb');
 
-// TODO do not just have passowrd in the code
-const uri = "mongodb+srv://xxx/?appName=Cluster0";
+const uri = "";
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
@@ -20,7 +20,7 @@ async function run() {
     await client.db("library_books").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
 
-    library_books = getLibraryBooks("library_books","albertina_lib");
+    library_books = getLibraryBooks("library_books","");
     console.log("Retrieved collection: " + library_books.collectionName);
 } finally {
     // Ensures that the client will close when you finish/error
